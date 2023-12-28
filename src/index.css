@@ -1,0 +1,39 @@
+:root {
+  --btn-background: #ef526a;
+  --btn-background-hover: #fff;
+
+  transition: all 0.2s ease-in-out;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: lightpink;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root.chasing {
+    --btn-background: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+button:hover {
+    color: var(--btn-background);
+    background-color: var(--btn-background-hover);
+}

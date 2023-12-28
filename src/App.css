@@ -1,0 +1,29 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.button-wrapper {
+  display: flex;
+  margin-top: 2rem;
+    justify-content: space-between;
+}
+
+.button-wrapper > button {
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-color: var(--btn-background);
+    color: #ffffff;
+    cursor: pointer;
+}
+
