@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --btn-background: #ef526a;
   --btn-background-hover: #fff;
@@ -33,7 +37,7 @@ body {
 }
 
 
-button:hover {
+button.ys:hover {
     color: var(--btn-background);
     background-color: var(--btn-background-hover);
 }

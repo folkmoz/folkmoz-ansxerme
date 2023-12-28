@@ -7,7 +7,7 @@ function App() {
   const [chasing, setChasing] = useState(false);
   const params = new URLSearchParams(window.location.search);
   const text =
-    params.get("q") || "Would you like to stay with me through the night?";
+    params.get("q") || "Would you like to stay with me through the night";
 
   const controls = useAnimationControls();
   const btnRef = createRef<HTMLButtonElement>();
@@ -49,7 +49,7 @@ function App() {
     }
     timer = setTimeout(() => {
       setChasing(false);
-    }, 2000);
+    }, 3000);
   };
 
   useEffect(() => {
@@ -62,10 +62,10 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className={"flex flex-col items-center space-y-8"}>
         {sayYes ? (
           <>
-            <h1 style={{ fontSize: "3rem" }}>Yeyy, Thank U!!</h1>
+            <h1 className={"font-bold text-6xl my-8"}>Yeyyyyyy!!</h1>
             <img
               src={
                 "https://media.giphy.com/media/KPgOYtIRnFOOk/giphy.gif?cid=790b7611yyn85onatyeexfw720hrm737bikykk9fw58a8y9s&ep=v1_gifs_trending&rid=giphy.gif&ct=g"
@@ -75,19 +75,28 @@ function App() {
           </>
         ) : (
           <>
-            <h1 className={"title"}>{text + "?"}</h1>
-            <img
-              src={
-                chasing
-                  ? "https://media.giphy.com/media/51Uiuy5QBZNkoF3b2Z/giphy.gif?cid=82a1493bhnb789hohgxoxjzi9dccy75m4btinxope9w6t0aq&ep=v1_gifs_trending&rid=giphy.gif&ct=g"
-                  : "https://media.giphy.com/media/los0R5UJA9bOuTmK7t/giphy.gif"
-              }
-              width={375}
-              height={375}
-              style={{ objectFit: "contain" }}
-            />
-            <div className={"button-wrapper"}>
+            <h1 className={"title font-semibold max-w-xl"}>{text + "?"}</h1>
+            <div className={"relative w-[375px] h-[375px]"}>
+              <img
+                className={"absolute"}
+                src="https://media.giphy.com/media/51Uiuy5QBZNkoF3b2Z/giphy.gif?cid=82a1493bhnb789hohgxoxjzi9dccy75m4btinxope9w6t0aq&ep=v1_gifs_trending&rid=giphy.gif&ct=g"
+                width={375}
+                height={375}
+                style={{ objectFit: "contain", opacity: chasing ? 1 : 0 }}
+              />
+              <img
+                className={"absolute"}
+                src={
+                  "https://media.giphy.com/media/los0R5UJA9bOuTmK7t/giphy.gif"
+                }
+                width={375}
+                height={375}
+                style={{ objectFit: "contain", opacity: chasing ? 0 : 1 }}
+              />
+            </div>
+            <div className={"button-wrapper w-[400px] flex justify-between"}>
               <motion.button
+                className={"ys"}
                 whileTap={{ scale: 0.9 }}
                 whileHover={{ scale: 1.1 }}
                 onClick={() => {
