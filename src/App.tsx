@@ -1,6 +1,6 @@
 import "./App.css";
 import { motion, useAnimationControls } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { createRef, useEffect, useState } from "react";
 
 function App() {
   const [sayYes, setSayYes] = useState(false);
@@ -10,7 +10,7 @@ function App() {
     params.get("q") || "Would you like to stay with me through the night?";
 
   const controls = useAnimationControls();
-  const btnRef = useRef<HTMLButtonElement>();
+  const btnRef = createRef<HTMLButtonElement>();
   let timer: number | undefined;
 
   const randomPositionInsidePage = () => {
